@@ -1,0 +1,6 @@
+psycopg2-binary
+datedays 
+numpy 
+ping3
+requests
+dnspython
