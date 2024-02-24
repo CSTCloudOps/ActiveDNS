@@ -68,7 +68,7 @@ def main(days=1):
         time1 = time.time()
         before_result = get_before_result(date_list[i-1])
         now_result = get_now_result(date_list[i])
-        # 应当以before为基础，用now去更新，保证得到最新的数据
+        
         # final_result = now_result.copy()
         # final_result.update(before_result)
         final_result = before_result.copy()

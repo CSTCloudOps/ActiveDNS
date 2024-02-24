@@ -40,7 +40,7 @@ def get_domain_iplist(date, filename):
 
 
 # def get_date_list(start, end):
-#     # 左开右闭
+#     
 #     start_date = date.fromisoformat(start)
 #     end_date = date.fromisoformat(end)
 

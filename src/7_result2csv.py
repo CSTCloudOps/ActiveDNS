@@ -93,7 +93,7 @@ def write_data(domain_ips_rttlist, year_month_day):
                 writer.writerow(result_list)
 
 def get_date_list(start, end):
-    # 左开右闭
+    
     start_date = date.fromisoformat(start)
     end_date = date.fromisoformat(end)
 

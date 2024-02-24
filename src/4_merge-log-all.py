@@ -54,7 +54,7 @@ def get_extend_domain_iplist_history(date):
     return domain_iplist
 
 def get_date_list(start, end):
-    # 左开右闭
+    
     start_date = date.fromisoformat(start)
     end_date = date.fromisoformat(end)
 

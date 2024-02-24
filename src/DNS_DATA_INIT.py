@@ -35,9 +35,9 @@ class DB:
 
 def main(days=1):
     time1 = time.time()
-    # 获取环境变量的值
+
     project_dir = os.environ.get('PROJECT_DIR')
-    ## 连接数据库，参数分别为数据库主机地址、端口号、用户、密码、数据库名称
+
     db=DB('127.0.0.1', 5432, 'postgres', '', 'dns')
 
     delet_backup = 'drop table dns_records_copy;'
@@ -49,7 +49,7 @@ def main(days=1):
     unique_index_backup = 'alter table dns_records_copy add constraint domain_ip_copy unique(zone, data);'
     unique_index_table = 'alter table dns_records add constraint domain_ip unique(zone, data);'
     # 检查表是否存在
-    table_name = "dns_records"  # 替换为您要检查的表名
+    table_name = "dns_records"  
     table_exist=db.table_exists(table_name)
     if table_exist:
         db.execu(delet_backup)

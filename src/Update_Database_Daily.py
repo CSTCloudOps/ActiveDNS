@@ -39,7 +39,6 @@ class DB:
 def main(days=1):
     time1 = time.time()
     project_dir = os.environ.get('PROJECT_DIR')
-    ## 连接数据库，参数分别为数据库主机地址、端口号、用户、密码、数据库名称
     db=DB('127.0.0.1', 5432, 'postgres', '', f'{db_name}')
 
     delet_backup = f'drop table {db_table_name}_copy;'
@@ -50,7 +49,7 @@ def main(days=1):
     
     unique_index_backup = f'alter table {db_table_name}_copy add constraint domain_ip_copy unique(zone, data);'
     unique_index_table = f'alter table {db_table_name} add constraint domain_ip unique(zone, data);'
-    # 检查表是否存在
+
     table_name = "dns_records"  
     table_exist=db.table_exists(table_name)
     if table_exist:

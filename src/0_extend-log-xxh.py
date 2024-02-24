@@ -46,7 +46,7 @@ def get_domains_ips(start, timelong=1440):
     for i in range(0, timelong):
         # if len(dict_domain_query) > 200000:
         #     break
-        # 计算一分钟的开始和结束时间, 左闭右开
+        
         begin = start
 
         start_ns = i * 60 * (10 ** 9) + begin
@@ -57,7 +57,6 @@ def get_domains_ips(start, timelong=1440):
         #url = "http://ip:port/loki/api/v1/query_range?query={job=%22dns%22}&limit=5000000&start=" + f"{start_ns:.0f}" + "&end=" + f"{end_ns:.0f}"
         response = requests.get(url)
 
-        # 从json数据中取出日志数据
         try:
             value = eval(response.text)["data"]["result"][0]["values"]
         except:
@@ -66,7 +65,7 @@ def get_domains_ips(start, timelong=1440):
 
         # ["timeStamp", "x x 01-Nov-2022 07:58:29.354 x ip ..."]
         for query in value:
-            # list_query 日志数据
+            # list_query log
             try:
                 list_query = query[1].split(',')
                 query_type = list_query[3]
@@ -80,7 +79,7 @@ def get_domains_ips(start, timelong=1440):
             # if domain == "ns4.dnsv2.com":
             #     print(query[1])
 
-                # 过滤权威
+                
             if response_type == 'NOERROR' and query_type == 'A' and lenth > 6:
                 for i in range(lenth-1, -1, -1):
                     item = list_query[i]
@@ -97,7 +96,7 @@ def get_domains_ips(start, timelong=1440):
                         dict_domain_ip_num[domain][item] += 1
                     # print(dict_domain_ip_num)
 
-                # 记录域名的访问次数时需要考虑cname，否则某些域名没有ip
+                
                 dict_cnt['cnt'] += 1
                 if domain not in dict_domain_query:
                     dict_domain_query[domain] = 1

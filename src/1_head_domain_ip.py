@@ -37,7 +37,7 @@ def get_date_mkdir(days=1):
     return year_month_day, dir_path
 
 # def get_date_list(start, end):
-#     # 左开右闭
+#     
 #     start_date = date.fromisoformat(start)
 #     end_date = date.fromisoformat(end)
 
@@ -56,7 +56,7 @@ def get_domains_ips(start, timelong=1440):
     dict_domain_ip_num = {}
     dict_domain_query = {}
     for i in range(0, timelong):
-        # 计算一分钟的开始和结束时间, 左闭右开
+        
         begin = start
 
         start_ns = i * 60 * (10 ** 9) + begin
@@ -67,7 +67,7 @@ def get_domains_ips(start, timelong=1440):
         #url = "http://ip:port/loki/api/v1/query_range?query={job=%22dns%22}&limit=5000000&start=" + f"{start_ns:.0f}" + "&end=" + f"{end_ns:.0f}"
         response = requests.get(url)
 
-        # 从json数据中取出日志数据
+        
         try:
             value = eval(response.text)["data"]["result"][0]["values"]
         except:
@@ -76,20 +76,20 @@ def get_domains_ips(start, timelong=1440):
 
         # ["timeStamp", "x x 01-Nov-2022 07:58:29.354 x ip ..."]
         for query in value:
-            # list_query 日志数据
+            # list_query log
             list_query = query[1].split()
-            # 过滤怪异的行
+            # filter
             if len(list_query) >= 31 and list_query[4] == "client":
                 name = list_query[1]
                 domain = list_query[9]
                 domain = domain.lower()
                 response_type = list_query[12]
 
-                # 过滤权威
+                # filter authority
                 if name != "{name=cache_1}" and name != "{name=cache_2}" or list_query[30] != "Response:" or response_type == 'NXDOMAIN':
                     continue
 
-                # 记录域名的访问次数时需要考虑cname，否则某些域名没有ip
+                
                 dict_cnt['cnt'] += 1
                 if domain not in dict_domain_query:
                     dict_domain_query[domain] = 1

@@ -53,7 +53,7 @@ def get_domain_ip(dir_path):
 
 
 def get_date_list(start, end):
-    # 左开右闭
+    
     start_date = date.fromisoformat(start)
     end_date = date.fromisoformat(end)
 
@@ -84,7 +84,7 @@ def main(days=1):
     time1 = time.time()
 
     
-    # 去重
+    
     new_ip_list = list(set(ip_list))
     new_ip_list.sort(key=ip_list.index)
     print("length of new_ip_list: {length}".format(length=len(new_ip_list)))
@@ -106,7 +106,7 @@ def main(days=1):
         time3 = time.time()
         print("ping ips time: {time}".format(time=time3-time2))
 
-        # 筛选出ping不了的IP
+        
         if log_flag == 0:
             useful_ip = list(ips_rtt.keys())
             unuseful_ip = list(set(new_ip_list).difference(set(useful_ip)))
