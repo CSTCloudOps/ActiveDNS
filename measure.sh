@@ -30,7 +30,7 @@ execute_python_script() {
 }
 
 # Execute the Python script in turn and check if the output file exists
-execute_python_script "${PROJECT_DIR}/ActiveDNS/src/0_extend-log-xxh.py" ${base_path}"/extend_domain_ip_xxh.txt"
+execute_python_script "${PROJECT_DIR}/ActiveDNS/src/0_extend-log.py" ${base_path}"/extend_domain_ip_xxh.txt"
 execute_python_script "${PROJECT_DIR}/ActiveDNS/src/1_head_domain_ip.py" ${base_path}"/head_domain_ip.txt"
 execute_python_script "${PROJECT_DIR}/ActiveDNS/src/2_merge_head_domain_ip.py" ${base_path}"/head_domain_ip_merge.txt"
 execute_python_script "${PROJECT_DIR}/ActiveDNS/src/3_extend-log-otherdns_v3.py" ${base_path}"/extend_domain_ip_otherdns.txt"
