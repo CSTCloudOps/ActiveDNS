@@ -63,7 +63,8 @@ def get_domains_ips(start, timelong=1440):
         end_ns = 60 * (10 ** 9) + start_ns
         print(local_time(start_ns / (10 ** 9)))
 
-        url = "http://223.193.36.79:33242/loki/api/v1/query_range?query={job=%22dns%22}&limit=5000000&start=" + f"{start_ns:.0f}" + "&end=" + f"{end_ns:.0f}"
+        # Enter the url of the log fetch address
+        #url = "http://ip:port/loki/api/v1/query_range?query={job=%22dns%22}&limit=5000000&start=" + f"{start_ns:.0f}" + "&end=" + f"{end_ns:.0f}"
         response = requests.get(url)
 
         # 从json数据中取出日志数据

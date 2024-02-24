@@ -2,7 +2,7 @@
 - Install git lfs (type "git lfs install" in git bash), which is used to download large files in the project
 - type "git clone -b main  https://github.com/wuli-wang/ActiveDNS.git", download ActiveDNS project
 - Go to the repository directory and type "git lfs fetch" to download large files from the remote server
-- Type "git lfs checkout"  to checkout files to the working directory
+- Type "git lfs checkout"  to checkout files to the working directory 
 # Project Introduction
 ## Related Technology Introduction
 

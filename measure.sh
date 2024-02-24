@@ -10,7 +10,7 @@ echo "current_time: $current_time\n"
 echo $base_path
 
 
-# 检查文件是否存在并执行Python脚本
+# Check if the file exists and execute the Python script
 execute_python_script() {
     script_file=$1
     output_file=$2
@@ -29,7 +29,7 @@ execute_python_script() {
     fi
 }
 
-# 依次执行Python脚本并检测输出文件是否存在
+# Execute the Python script in turn and check if the output file exists
 execute_python_script "${PROJECT_DIR}/ActiveDNS/src/0_extend-log-xxh.py" ${base_path}"/extend_domain_ip_xxh.txt"
 execute_python_script "${PROJECT_DIR}/ActiveDNS/src/1_head_domain_ip.py" ${base_path}"/head_domain_ip.txt"
 execute_python_script "${PROJECT_DIR}/ActiveDNS/src/2_merge_head_domain_ip.py" ${base_path}"/head_domain_ip_merge.txt"
@@ -44,7 +44,7 @@ echo "$SUDO_PASSWORD" | sudo -S mkdir -p /mnt/data/postgres/data/${last_day}
 echo "$SUDO_PASSWORD" | sudo -S  sh -c 'cp  ${PROJECT_DIR}/ActiveDNS/data/${last_day}/v4_merge_result_without_2domains.csv /mnt/data/postgres/data/${last_day}'
 python3 ${PROJECT_DIR}/ActiveDNS/src/Update_Database_Daily.py
 
-# 所有脚本执行成功
+# All scripts executed successfully
 current_time=$(date "+%Y-%m-%d %H:%M:%S")
 echo "\n${current_time} All Python scripts executed successfully!\n\n\n"
 
