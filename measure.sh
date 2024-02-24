@@ -33,7 +33,7 @@ execute_python_script() {
 execute_python_script "${PROJECT_DIR}/ActiveDNS/src/0_extend-log.py" ${base_path}"/extend_domain_ip_xxh.txt"
 execute_python_script "${PROJECT_DIR}/ActiveDNS/src/1_head_domain_ip.py" ${base_path}"/head_domain_ip.txt"
 execute_python_script "${PROJECT_DIR}/ActiveDNS/src/2_merge_head_domain_ip.py" ${base_path}"/head_domain_ip_merge.txt"
-execute_python_script "${PROJECT_DIR}/ActiveDNS/src/3_extend-log-otherdns_v3.py" ${base_path}"/extend_domain_ip_otherdns.txt"
+execute_python_script "${PROJECT_DIR}/ActiveDNS/src/3_extend-log-otherdns.py" ${base_path}"/extend_domain_ip_otherdns.txt"
 execute_python_script "${PROJECT_DIR}/ActiveDNS/src/4_merge-log-all.py" ${base_path}"/final_domain_ip_v4.txt"
 execute_python_script "${PROJECT_DIR}/ActiveDNS/src/5_ip_rtt.py" ${base_path}"/final_domain_sorted_ip_rtt_v4-all.txt"
 execute_python_script "${PROJECT_DIR}/ActiveDNS/src/6_merge_result.py" ${base_path}"/v4_merge_result.txt"
