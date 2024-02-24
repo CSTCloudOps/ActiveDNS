@@ -145,11 +145,11 @@ def get_head_domain_ip(days=1, timelong=1440, dive_rate=10):
         for domain in head_domain_ip:
             f.write(domain + ': ' + str(head_domain_ip[domain]) + '\n') 
 
-    # with open(file=dir_path + "/domain_querynum_xxh.txt", mode="w", encoding="utf-8") as f:
+    # with open(file=dir_path + "/domain_querynum_x.txt", mode="w", encoding="utf-8") as f:
     #     for item in list_sorted_domain_query:
     #         f.write(item[0] + ': ' + str(item[1]) + '\n') 
 
-    with open(file=dir_path + "/domain_querynum_xxh.txt", mode="w", encoding="utf-8") as f:
+    with open(file=dir_path + "/domain_querynum_x.txt", mode="w", encoding="utf-8") as f:
         for i in range(head_lenth):
             f.write(list_sorted_domain_query[i][0] + ': ' + str(list_sorted_domain_query[i][1]) + '\n') 
             
