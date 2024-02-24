@@ -37,7 +37,7 @@ Among these libraries, the following Python built-in modules are required:
 
 ## 1.Installation & Configuration
 
-​	Use the 'source' command to run the script **"install.sh"**,complete the installation and configuration of postgreSQL and BIND, and start the **‘named’** service. The **‘named’** service is the core component of the BIND service, and you can start the DNS server of BIND by running named (please use the source command to exercise the environment variable to take effect).
+Use the 'source' command to run the script **"install.sh"**,complete the installation and configuration of postgreSQL and BIND, and start the **‘named’** service. The **‘named’** service is the core component of the BIND service, and you can start the DNS server of BIND by running named (please use the 'source' command to exercise the environment variable to take effect).
 
 ## 2.Data Measurement & Database Updating
 
