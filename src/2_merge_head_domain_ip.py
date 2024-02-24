@@ -68,10 +68,10 @@ def main(days=1):
 
     print(date)
     domain_querynum_rjy = get_domain_querynum(date, "domain_querynum.txt")
-    domain_querynum_xxh = get_domain_querynum(date, "domain_querynum_xxh.txt")
+    domain_querynum_xxh = get_domain_querynum(date, "domain_querynum_x.txt")
 
     domain_ip_rjy = get_domain_iplist(date, "head_domain_ip.txt")
-    domain_ip_xxh = get_domain_iplist(date, "extend_domain_ip_xxh.txt")
+    domain_ip_xxh = get_domain_iplist(date, "extend_domain_ip_x.txt")
 
 
     merge_tuple = merge(domain_querynum_rjy, domain_querynum_xxh)
